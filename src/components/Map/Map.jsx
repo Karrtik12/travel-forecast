@@ -25,7 +25,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
         onChildClick={""}
       >
         {places?.map((place, i) => (
-          <div
+          <MarkerContainer
             lat={Number(place.latitude)}
             lng={Number(place.longitude)}
             key={i}
@@ -47,7 +47,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
                 />
               </PaperStyled>
             )}
-          </div>
+          </MarkerContainer>
         ))}
       </GoogleMapReact>
     </MapContainer>

@@ -28,18 +28,22 @@ const PlaceDetails = ({ place }) => {
         <Typography gutterBottom variant="h5">
           {place.name}
         </Typography>
-        <Box display="flex" justifyContent="space-between">
-          <Typography variant="subtitle1">Price</Typography>
-          <Typography gutterBottom variant="subtitle1">
-            {place.price_level}
-          </Typography>
-        </Box>
-        <Box display="flex" justifyContent="space-between">
-          <Typography variant="subtitle1">Ranking</Typography>
-          <Typography gutterBottom variant="subtitle1">
-            {place.ranking}
-          </Typography>
-        </Box>
+        {place?.price_level && (
+          <Box display="flex" justifyContent="space-between">
+            <Typography variant="subtitle1">Price</Typography>
+            <Typography gutterBottom variant="subtitle1">
+              {place.price_level}
+            </Typography>
+          </Box>
+        )}
+        {place?.ranking && (
+          <Box display="flex" justifyContent="space-between">
+            <Typography variant="subtitle1">Ranking</Typography>
+            <Typography gutterBottom variant="subtitle1">
+              {place.ranking}
+            </Typography>
+          </Box>
+        )}
         {place?.awards?.map((award) => (
           <Box
             my={1}

@@ -15,7 +15,7 @@ const Header = () => {
     <AppBar position="static">
       <ToolbarStyled>
         <Title variant="h5">TravelForecast</Title>
-        <Box display="flex">
+        <Box display="flex" alignItems="center">
           <Title variant="h6">Forecast Your Adventure</Title>
           {/* <Autocomplete> */}
           <Search>

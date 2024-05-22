@@ -1,5 +1,5 @@
 import { Chip, Typography } from "@mui/material";
-import { margin, styled } from "@mui/system";
+import { styled } from "@mui/system";
 
 export const ChipStyled = styled(Chip)(({ theme }) => ({
   margin: "5px 5px 5px 0",

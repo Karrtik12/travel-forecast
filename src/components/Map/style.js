@@ -5,7 +5,9 @@ export const PaperStyled = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  backgroundColor: "#ffffff",
   width: "100px",
+  cursor: "pointer",
 }));
 
 export const MapContainer = styled("div")(({ theme }) => ({
@@ -18,8 +20,4 @@ export const MarkerContainer = styled("div")(({ theme }) => ({
   transform: "translate(-50%, -50%)",
   zIndex: 1,
   "&:hover": { zIndex: 2 },
-}));
-
-export const Pointer = styled("img")(({ theme }) => ({
-  cursor: "pointer",
 }));

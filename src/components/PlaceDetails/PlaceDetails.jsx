@@ -1,20 +1,21 @@
-import { LocationOnOutlined, Phone, Title } from "@mui/icons-material";
+import { LocationOnOutlined, Phone } from "@mui/icons-material";
 import {
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
-  Chip,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { ChipStyled, TypoSpacing, TypoSubtitle } from "./style";
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
+  if (selected)
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   return (
-    <Card elevation={6}>
+    <Card elevation={6} style={{ padding: "5px" }}>
       <CardMedia
         style={{ height: 350 }}
         image={

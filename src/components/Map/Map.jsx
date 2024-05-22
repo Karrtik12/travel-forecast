@@ -34,7 +34,7 @@ const Map = ({
         }}
         onChildClick={(child) => setChildClicked(child)}
       >
-        {places.length &&
+        {places?.length &&
           places.map((place, i) => (
             <MarkerContainer
               lat={Number(place.latitude)}

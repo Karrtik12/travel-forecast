@@ -4,9 +4,7 @@ import axios from "axios";
 
 export const getPlacesData = async (type, sw, ne) => {
   try {
-    const {
-      data: { data },
-    } = await axios.get(
+    var response = await axios.get(
       `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`,
       {
         params: {
@@ -21,8 +19,16 @@ export const getPlacesData = async (type, sw, ne) => {
         },
       }
     );
-    // console.log({ data });
-    // const data = demoResponse;
+    const {
+      data: { data },
+    } = response;
     return data;
-  } catch (error) {}
+  } catch (error) {
+    const status = error.response.status;
+    if (status === 429) {
+      alert(
+        "Rapid API quota limit exceeded. Please try again after some time."
+      );
+    }
+  }
 };
